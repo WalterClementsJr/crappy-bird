@@ -756,13 +756,13 @@
             let score = GameEngine.score.coins;
             console.log(score);
 
-            if (score <= base)
+            if (score < base)
                 return "bronze";
-            if (score >= base * 2)
+            else if (score >= base * 2)
                 return "silver";
-            if (score >= base * 3)
+            else if (score >= base * 3)
                 return "gold";
-            if (score >= base * 4)
+            else
                 return "platinum";
         }
 
@@ -793,6 +793,8 @@
                 that.replay = new Image();
                 that.replay.src = "replay.png";
                 that.highscore = that.getHighScore();
+
+                console.log(that.medal.src);
             }, 500);
         }
 
